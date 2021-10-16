@@ -1,0 +1,20 @@
+{
+    "name": "texteditor",
+    "version": "1.0.0",
+    "description": "This a application Electron",
+    "main": "main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "electron ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/RennanDamiaoMoreira/textEditor.git"
+    },
+    "author": "Rennan Damião Moreira",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/RennanDamiaoMoreira/textEditor/issues"
+    },
+    "homepage": "https://github.com/RennanDamiaoMoreira/textEditor#readme"
+}
