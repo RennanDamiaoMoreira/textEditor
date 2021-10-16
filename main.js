@@ -21,7 +21,10 @@ const templateMenu = [{
                 createNewFile()
             }
         }, {
-            'label': 'abrir'
+            'label': 'abrir',
+            click() {
+                openFile()
+            }
         }, {
             'label': 'salvar',
             click() {
@@ -131,6 +134,26 @@ function saveFile() {
 
     writeFile(file.path)
 
+
+}
+
+async function openFile() {
+    let dialogFile = await dialog.showOpenDialog(win, {
+        defaultPath: file.path
+    })
+    if (dialogFile.canceled) return;
+
+
+    let temp = fs.readFileSync(dialogFile.filePaths[0], 'utf8');
+
+    file = {
+        nome: path.basename(dialogFile.filePaths[0]),
+        path: dialogFile.filePaths[0],
+        saved: true,
+        content: temp
+    }
+
+    win.webContents.send('set-File', file);
 
 }
 
